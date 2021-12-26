@@ -377,11 +377,12 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
+    android.hardware.power@1.3-service.laurel_sprout-libperfmgr \
+    android.hardware.power.stats@1.0-service.pixel \
     vendor.qti.hardware.perf@2.2.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/perf/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml \
+    $(LOCAL_PATH)/configs/perf/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
     $(LOCAL_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf
 
 # Public Libraries
@@ -391,11 +392,6 @@ PRODUCT_COPY_FILES += \
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
-
-# Pixel Offline charger
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    product_charger_res_images
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -452,6 +448,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/google/interfaces \
     hardware/xiaomi \
     vendor/qcom/opensource/interfaces \
     vendor/qcom/opensource/commonsys/system/bt
@@ -504,6 +501,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
     libwifi-hal-qcom \
+    libwpa_client \
     wcnss_service \
     WifiOverlay \
     wpa_supplicant \

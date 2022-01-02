@@ -375,8 +375,8 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.laurel_sprout-libperfmgr \
     android.hardware.power.stats@1.0-service.pixel \
+    android.hardware.power-service-qti \
     vendor.qti.hardware.perf@2.2.vendor
 
 PRODUCT_COPY_FILES += \
